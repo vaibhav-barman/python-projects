@@ -16,6 +16,7 @@ I'm using a **project-based approach** — learning concepts as I build, experim
 |---|---|
 | [Quiz Game](./Quiz%20Game) | A simple quiz game that tests the player's knowledge and keeps track of the score. |
 | [Number Guessing Game](./Number%20Guessing%20game) | A game where the player tries to guess a randomly generated number. |
+| [Rock Paper Scissors Game](./Rock%20Paper%20Scissors%20Game) | A classic Rock Paper Scissors game played against the computer. |
 
 ### 🟡 Intermediate
 
