@@ -15,12 +15,15 @@ I'm using a **project-based approach** — learning concepts as I build, experim
 | Project | Description |
 |---|---|
 | [Quiz Game](./Quiz%20Game) | A simple quiz game that tests the player's knowledge and keeps track of the score. |
-| [Number Guessing Game](./Number%20Guessing%20game) | A game where the player tries to guess a randomly generated number. |
-| [Rock Paper Scissors Game](./Rock%20Paper%20Scissors%20Game) | A classic Rock Paper Scissors game played against the computer. |
+| [Number Guessing Game](./Number%20Guessing%20Game) | A game where the player tries to guess a randomly generated number. |
+| [Rock Paper Scissors](./Rock%20Paper%20Scissors) | A classic Rock Paper Scissors game played against the computer. |
+| [Choose Your Own Adventure Game](./Choose%20Your%20Own%20Adventure%20Game) | A text-based adventure game where the player makes choices that determine the story. **Coming soon...** |
 
 ### 🟡 Intermediate
 
-More projects coming soon...
+| Project | Description |
+|---|---|
+| [Madlibs Generator](./Madlibs%20Generator) | A fun word-based game that generates a story using words provided by the user. |
 
 ### 🔴 Advanced
 
