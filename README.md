@@ -17,7 +17,7 @@ I'm using a **project-based approach** — learning concepts as I build, experim
 | [Quiz Game](./Quiz%20Game) | A simple quiz game that tests the player's knowledge and keeps track of the score. |
 | [Number Guessing Game](./Number%20Guessing%20Game) | A game where the player tries to guess a randomly generated number. |
 | [Rock Paper Scissors](./Rock%20Paper%20Scissors) | A classic Rock Paper Scissors game played against the computer. |
-| [Choose Your Own Adventure Game](./Choose%20Your%20Own%20Adventure%20Game) | A text-based adventure game where the player makes choices that determine the story. **Coming soon...** |
+| [Choose Your Own Adventure Game](./Choose%20Your%20Own%20Adventure%20Game) | A text-based adventure game where the player makes choices that determine the story. |
 
 ### 🟡 Intermediate
 
