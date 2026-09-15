@@ -22,7 +22,7 @@ def view():
             for line in f.readlines():
                 data = line.rstrip()
                 user, passw = data.split("|")
-                print("User:", user, "Password:", str(fer.decrypt(passw.encode())))
+                print("User:", user, "Password:", fer.decrypt(passw.encode()))
 
 
 def add():
@@ -30,7 +30,7 @@ def add():
     pwd = input("Password: ")
 
     with open("passwords.txt", "a") as f:
-        f.write(name + "|" + str(fer.encrypt(pwd.encode())) + "\n")
+        f.write(name + "|" + fer.encrypt(pwd.encode()).decode() + "\n")
 
 while True:
     mode = input("Would you like to add a new password or view an existing one (view/add), press q to quit? ").lower()
