@@ -8,7 +8,13 @@ def write_key():
     with open("key.key", "wb") as key_file:
         key_file.write(key)
 '''
-        
+
+def load_key():
+    file = open("key.key", "rb")
+    key = file.read()
+    file.close()
+    return key
+
 def view():
     with open("passwords.txt", "r") as f:
             for line in f.readlines():
