@@ -24,6 +24,7 @@ I'm using a **project-based approach** — learning concepts as I build, experim
 | Project | Description |
 |---|---|
 | [Madlibs Generator](./Madlibs%20Generator) | A fun word-based game that generates a story using words provided by the user. |
+| [Password Manager](./Password%20Manager) | A simple password manager that securely encrypts and stores passwords using Fernet encryption. |
 
 ### 🔴 Advanced
 
@@ -34,6 +35,7 @@ More projects coming soon...
 ## 🛠️ Tech Stack
 
 - Python
+- Cryptography
 
 More technologies and libraries will be added as the projects become more advanced.
 
