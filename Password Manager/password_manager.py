@@ -22,7 +22,7 @@ def view():
             for line in f.readlines():
                 data = line.rstrip()
                 user, passw = data.split("|")
-                print("User:", user, "Password:", passw)
+                print("User:", user, "Password:", str(fer.decrypt(passw.encode())))
 
 
 def add():
