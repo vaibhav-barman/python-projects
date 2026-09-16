@@ -20,7 +20,11 @@ params = {
     "units": "metric"
 }
 
-response = requests.get(url, params=params, timeout=10)
+try:
+    response = requests.get(url, params=params, timeout=10)
+except requests.exceptions.RequestException:
+    print("Unable to connect to the weather service.")
+    exit()
 
 if response.status_code == 404:
     print("City not found. Please check the city name and try again.")
