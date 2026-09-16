@@ -18,11 +18,12 @@ params = {
 
 response = requests.get(url, params=params)
 
-print(response.status_code)
+if response.status_code == 404:
+    print("City not found. Please check the city name and try again.")
+    exit()
 
 if response.status_code != 200:
-    print("Something went wrong:")
-    print(response.json())
+    print("Something went wrong. Please try again.")
     exit()
 
 data = response.json()
