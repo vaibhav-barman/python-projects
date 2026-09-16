@@ -6,7 +6,11 @@ load_dotenv()
 
 api_key = os.getenv("OPENWEATHER_API_KEY")
 
-city = input("Enter city name: ")
+city = input("Enter city name: ").strip()
+
+if not city:
+    print("City name cannot be empty.")
+    exit()
 
 url = "https://api.openweathermap.org/data/2.5/weather"
 
