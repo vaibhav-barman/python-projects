@@ -6,7 +6,7 @@ load_dotenv()
 
 api_key = os.getenv("OPENWEATHER_API_KEY")
 
-city = "Jaipur"
+city = input("Enter city name: ")
 
 url = "https://api.openweathermap.org/data/2.5/weather"
 
