@@ -45,8 +45,9 @@ feels_like = data["main"]["feels_like"]
 humidity = data["main"]["humidity"]
 wind_speed = data["wind"]["speed"]
 description = data["weather"][0]["description"]
+country = data["sys"]["country"]
 
-print("City:", city)
+print("City:", city, country)
 print("Temperature:", temperature, "°C")
 print("Feels like:", feels_like, "°C")
 print("Humidity:", humidity, "%")
