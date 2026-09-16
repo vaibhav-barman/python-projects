@@ -20,7 +20,7 @@ params = {
     "units": "metric"
 }
 
-response = requests.get(url, params=params)
+response = requests.get(url, params=params, timeout=10)
 
 if response.status_code == 404:
     print("City not found. Please check the city name and try again.")
