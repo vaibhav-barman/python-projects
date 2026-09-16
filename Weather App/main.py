@@ -48,6 +48,7 @@ humidity = data["main"]["humidity"]
 wind_speed = data["wind"]["speed"]
 description = data["weather"][0]["description"]
 country = data["sys"]["country"]
+pressure = data["main"]["pressure"]
 
 print("City:", city, country)
 print("Temperature:", temperature, "°C")
@@ -57,3 +58,4 @@ print("Feels like:", feels_like, "°C")
 print("Humidity:", humidity, "%")
 print("Wind speed:", wind_speed, "m/s")
 print("Condition:", description)
+print("Pressure:", pressure, "hPa")
