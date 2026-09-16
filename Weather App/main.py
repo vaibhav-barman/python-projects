@@ -52,6 +52,7 @@ country = data["sys"]["country"]
 pressure = data["main"]["pressure"]
 sunrise = data["sys"]["sunrise"]
 sunset = data["sys"]["sunset"]
+wind_direction = data["wind"]["deg"]
 
 sunrise_time = datetime.fromtimestamp(sunrise)
 sunset_time = datetime.fromtimestamp(sunset)
@@ -67,3 +68,4 @@ print("Condition:", description)
 print("Pressure:", pressure, "hPa")
 print("Sunrise:", sunrise_time.strftime("%H:%M"))
 print("Sunset:", sunset_time.strftime("%H:%M"))
+print("Wind direction:", wind_direction, "°")
