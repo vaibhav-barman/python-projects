@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 import requests
 from dotenv import load_dotenv
 
@@ -49,6 +50,11 @@ wind_speed = data["wind"]["speed"]
 description = data["weather"][0]["description"]
 country = data["sys"]["country"]
 pressure = data["main"]["pressure"]
+sunrise = data["sys"]["sunrise"]
+sunset = data["sys"]["sunset"]
+
+sunrise_time = datetime.fromtimestamp(sunrise)
+sunset_time = datetime.fromtimestamp(sunset)
 
 print("City:", city, country)
 print("Temperature:", temperature, "°C")
@@ -59,3 +65,5 @@ print("Humidity:", humidity, "%")
 print("Wind speed:", wind_speed, "m/s")
 print("Condition:", description)
 print("Pressure:", pressure, "hPa")
+print("Sunrise:", sunrise_time.strftime("%H:%M"))
+print("Sunset:", sunset_time.strftime("%H:%M"))
