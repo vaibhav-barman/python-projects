@@ -41,6 +41,8 @@ if response.status_code != 200:
 data = response.json()
 
 temperature = data["main"]["temp"]
+temp_min = data["main"]["temp_min"]
+temp_max = data["main"]["temp_max"]
 feels_like = data["main"]["feels_like"]
 humidity = data["main"]["humidity"]
 wind_speed = data["wind"]["speed"]
@@ -49,6 +51,8 @@ country = data["sys"]["country"]
 
 print("City:", city, country)
 print("Temperature:", temperature, "°C")
+print("Minimum:", temp_min, "°C")
+print("Maximum:", temp_max, "°C")
 print("Feels like:", feels_like, "°C")
 print("Humidity:", humidity, "%")
 print("Wind speed:", wind_speed, "m/s")
