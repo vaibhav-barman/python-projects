@@ -114,4 +114,4 @@ def process_forecast(data):
         forecast["minimum"] = min(forecast["temperatures"])
         forecast["maximum"] = max(forecast["temperatures"])
 
-    return daily_forecast
+    return dict(list(daily_forecast.items())[1:6])
