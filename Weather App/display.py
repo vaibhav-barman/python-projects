@@ -17,6 +17,31 @@ def get_wind_direction(degrees):
 
     return directions[index]
 
+def get_weather_icon(icon_code):
+
+    icons = {
+        "01d": "☀️",
+        "01n": "🌙",
+        "02d": "🌤️",
+        "02n": "☁️",
+        "03d": "☁️",
+        "03n": "☁️",
+        "04d": "☁️",
+        "04n": "☁️",
+        "09d": "🌧️",
+        "09n": "🌧️",
+        "10d": "🌦️",
+        "10n": "🌧️",
+        "11d": "⛈️",
+        "11n": "⛈️",
+        "13d": "❄️",
+        "13n": "❄️",
+        "50d": "🌫️",
+        "50n": "🌫️"
+    }
+
+    return icons.get(icon_code, "🌡️")
+
 def display_weather(data, city):
 
     temperature = data["main"]["temp"]
@@ -32,6 +57,9 @@ def display_weather(data, city):
     wind_direction = get_wind_direction(wind_degrees)
 
     description = data["weather"][0]["description"]
+
+    icon_code = data["weather"][0]["icon"]
+    weather_icon = get_weather_icon(icon_code)
 
     country = data["sys"]["country"]
 
@@ -50,7 +78,7 @@ def display_weather(data, city):
     print(f"Minimum     : {temp_min} °C")
     print(f"Maximum     : {temp_max} °C")
     print(f"Feels like  : {feels_like} °C")
-    print(f"Condition   : {description}")
+    print(f"Condition   : {weather_icon} {description.title()}")
 
     print(f"Humidity    : {humidity}%")
     print(f"Pressure    : {pressure} hPa")
