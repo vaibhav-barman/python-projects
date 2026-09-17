@@ -83,13 +83,15 @@ def process_forecast(data):
         description = entry["weather"][0]["description"]
 
         icon = entry["weather"][0]["icon"]
-
+        rain_probability = entry.get("pop", 0)
+        
         if date not in daily_forecast:
 
             daily_forecast[date] = {
                 "temperatures": [],
                 "descriptions": [],
-                "icons": []
+                "icons": [],
+                "rain_probability": []
             }
 
         daily_forecast[date]["temperatures"].append(temperature)
@@ -97,6 +99,7 @@ def process_forecast(data):
         daily_forecast[date]["descriptions"].append(description)
 
         daily_forecast[date]["icons"].append(icon)
+        daily_forecast[date]["rain_probability"].append(rain_probability)
 
     for date, forecast in daily_forecast.items():
 
@@ -113,5 +116,8 @@ def process_forecast(data):
 
         forecast["minimum"] = min(forecast["temperatures"])
         forecast["maximum"] = max(forecast["temperatures"])
+        forecast["rain_probability"] = sum(
+            forecast["rain_probability"]
+        ) / len(forecast["rain_probability"])
 
     return dict(list(daily_forecast.items())[1:6])

@@ -114,6 +114,9 @@ def display_forecast(daily_forecast):
         print(formatted_date)
         print(f"{icon} {description.title()}")
         print(f"Temperature: {minimum:.1f}°C - {maximum:.1f}°C")
+        rain_probability = forecast["rain_probability"] * 100
+
+        print(f"Rain probability: {rain_probability:.0f}%")
 
     print()
     print("=" * 40)
