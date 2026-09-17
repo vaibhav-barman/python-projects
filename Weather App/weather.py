@@ -10,8 +10,7 @@ api_key = os.getenv("OPENWEATHER_API_KEY")
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
-
-def get_weather(city):
+def make_request(url, city):
 
     params = {
         "q": city,
@@ -21,7 +20,7 @@ def get_weather(city):
 
     try:
         response = requests.get(
-            BASE_URL,
+            url,
             params=params,
             timeout=10
         )
@@ -39,36 +38,13 @@ def get_weather(city):
         return None, "Something went wrong. Please try again."
 
     return response.json(), None
+
+def get_weather(city):
+    return make_request(BASE_URL, city)
 
 
 def get_forecast(city):
-
-    params = {
-        "q": city,
-        "appid": api_key,
-        "units": "metric"
-    }
-
-    try:
-        response = requests.get(
-            FORECAST_URL,
-            params=params,
-            timeout=10
-        )
-
-    except requests.exceptions.RequestException:
-        return None, "Unable to connect to the weather service."
-
-    if response.status_code == 404:
-        return None, "City not found. Please check the city name and try again."
-
-    if response.status_code == 401:
-        return None, "Invalid API key. Please check your .env file."
-
-    if response.status_code != 200:
-        return None, "Something went wrong. Please try again."
-
-    return response.json(), None
+    return make_request(FORECAST_URL, city)
 
 def process_forecast(data):
 
