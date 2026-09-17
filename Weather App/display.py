@@ -90,3 +90,30 @@ def display_weather(data, city):
     print(f"Sunset      : {sunset_time.strftime('%H:%M')}")
 
     print("=" * 40)
+
+def display_forecast(daily_forecast):
+
+    print()
+    print("=" * 40)
+    print("5-DAY FORECAST")
+    print("=" * 40)
+
+    for date, forecast in daily_forecast.items():
+
+        temperatures = forecast["temperatures"]
+        descriptions = forecast["descriptions"]
+        icons = forecast["icons"]
+
+        minimum = min(temperatures)
+        maximum = max(temperatures)
+
+        description = descriptions[0]
+        icon = get_weather_icon(icons[0])
+
+        print()
+        print(f"{date}")
+        print(f"{icon} {description.title()}")
+        print(f"Temperature: {minimum:.1f}°C - {maximum:.1f}°C")
+
+    print()
+    print("=" * 40)
