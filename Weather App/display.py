@@ -100,18 +100,18 @@ def display_forecast(daily_forecast):
 
     for date, forecast in daily_forecast.items():
 
-        temperatures = forecast["temperatures"]
-        descriptions = forecast["descriptions"]
-        icons = forecast["icons"]
+        date_object = datetime.strptime(date, "%Y-%m-%d")
 
-        minimum = min(temperatures)
-        maximum = max(temperatures)
+        formatted_date = date_object.strftime("%A, %d %B")
 
-        description = descriptions[0]
-        icon = get_weather_icon(icons[0])
+        minimum = forecast["minimum"]
+        maximum = forecast["maximum"]
+
+        description = forecast["description"]
+        icon = get_weather_icon(forecast["icon"])
 
         print()
-        print(f"{date}")
+        print(formatted_date)
         print(f"{icon} {description.title()}")
         print(f"Temperature: {minimum:.1f}°C - {maximum:.1f}°C")
 

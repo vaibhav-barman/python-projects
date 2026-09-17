@@ -1,6 +1,7 @@
 import os
 import requests
 from dotenv import load_dotenv
+from collections import Counter
 
 load_dotenv()
 
@@ -96,5 +97,21 @@ def process_forecast(data):
         daily_forecast[date]["descriptions"].append(description)
 
         daily_forecast[date]["icons"].append(icon)
+
+    for date, forecast in daily_forecast.items():
+
+        most_common_description = Counter(
+            forecast["descriptions"]
+        ).most_common(1)[0][0]
+
+        most_common_icon = Counter(
+            forecast["icons"]
+        ).most_common(1)[0][0]
+
+        forecast["description"] = most_common_description
+        forecast["icon"] = most_common_icon
+
+        forecast["minimum"] = min(forecast["temperatures"])
+        forecast["maximum"] = max(forecast["temperatures"])
 
     return daily_forecast
