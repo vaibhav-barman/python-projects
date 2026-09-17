@@ -1,5 +1,21 @@
 from datetime import datetime
 
+def get_wind_direction(degrees):
+
+    directions = [
+        "N",
+        "NE",
+        "E",
+        "SE",
+        "S",
+        "SW",
+        "W",
+        "NW"
+    ]
+
+    index = round(degrees / 45) % 8
+
+    return directions[index]
 
 def display_weather(data, city):
 
@@ -12,7 +28,8 @@ def display_weather(data, city):
     pressure = data["main"]["pressure"]
 
     wind_speed = data["wind"]["speed"]
-    wind_direction = data["wind"]["deg"]
+    wind_degrees = data["wind"]["deg"]
+    wind_direction = get_wind_direction(wind_degrees)
 
     description = data["weather"][0]["description"]
 
@@ -39,7 +56,7 @@ def display_weather(data, city):
     print(f"Pressure    : {pressure} hPa")
 
     print(f"Wind speed  : {wind_speed} m/s")
-    print(f"Wind dir.   : {wind_direction}°")
+    print(f"Wind dir.   : {wind_direction} ({wind_degrees}°)")
 
     print(f"Sunrise     : {sunrise_time.strftime('%H:%M')}")
     print(f"Sunset      : {sunset_time.strftime('%H:%M')}")
