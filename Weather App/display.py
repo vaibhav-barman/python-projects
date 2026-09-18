@@ -107,6 +107,8 @@ def display_forecast(daily_forecast):
         minimum = forecast["minimum"]
         maximum = forecast["maximum"]
 
+        feels_like = forecast["feels_like"]
+
         description = forecast["description"]
         icon = get_weather_icon(forecast["icon"])
 
@@ -114,6 +116,7 @@ def display_forecast(daily_forecast):
         print(formatted_date)
         print(f"{icon} {description.title()}")
         print(f"Temperature: {minimum:.1f}°C - {maximum:.1f}°C")
+        print(f"Feels like: {feels_like:.1f}°C")
         rain_probability = forecast["rain_probability"] * 100
 
         print(f"Rain probability: {rain_probability:.0f}%")

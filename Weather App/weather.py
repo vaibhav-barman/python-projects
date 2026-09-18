@@ -55,6 +55,7 @@ def process_forecast(data):
         date = entry["dt_txt"].split(" ")[0]
 
         temperature = entry["main"]["temp"]
+        feels_like = entry["main"]["feels_like"]
 
         description = entry["weather"][0]["description"]
 
@@ -65,12 +66,14 @@ def process_forecast(data):
 
             daily_forecast[date] = {
                 "temperatures": [],
+                "feels_like": [],
                 "descriptions": [],
                 "icons": [],
                 "rain_probability": []
             }
 
         daily_forecast[date]["temperatures"].append(temperature)
+        daily_forecast[date]["feels_like"].append(feels_like)
 
         daily_forecast[date]["descriptions"].append(description)
 
@@ -92,6 +95,9 @@ def process_forecast(data):
 
         forecast["minimum"] = min(forecast["temperatures"])
         forecast["maximum"] = max(forecast["temperatures"])
+        forecast["feels_like"] = sum(
+            forecast["feels_like"]
+        ) / len(forecast["feels_like"])
         forecast["rain_probability"] = sum(
             forecast["rain_probability"]
         ) / len(forecast["rain_probability"])
